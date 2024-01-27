@@ -1,11 +1,6 @@
 # Copyright (c) HashiCorp, Inc.
 # SPDX-License-Identifier: MPL-2.0
 
-output "instance_ami" {
-  value = aws_instance.ubuntu.ami
+output "obsidian_s3_bucket_arn" {
+  value = aws_s3_bucket.obsidian_bucket.arn
 }
-
-output "instance_arn" {
-  value = aws_instance.ubuntu.arn
-}
-
