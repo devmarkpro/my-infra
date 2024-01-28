@@ -48,10 +48,10 @@ resource "aws_iam_role" "obsidian_admin_role" {
 }
 
 # Attach the IAM policy to the IAM role
-resource "aws_iam_role_policy_attachment" "obsidian_s3_admin_attachment" {
-  policy_arn = aws_iam_policy.obsidian_full_access.arn
-  role       = aws_iam_role.obsidian_admin_role.name
-}
+# resource "aws_iam_role_policy_attachment" "obsidian_s3_admin_attachment" {
+#   policy_arn = aws_iam_policy.obsidian_full_access.arn
+#   role       = aws_iam_role.obsidian_admin_role.name
+# }
 
 
 ################ Podcasts ##############
