@@ -19,7 +19,7 @@ resource "aws_s3_bucket" "obsidian_bucket" {
 # Define an IAM policy that grants full access to the S3 bucket
 resource "aws_iam_policy" "obsidian_full_access" {
   name        = "ObsidianFullAccessPolicy"
-  description = "Policy that grants full access to obsidian"
+  description = "Policy that grants full access to S3 bucket"
   
   policy = jsonencode({
     Version = "2012-10-17",
@@ -48,10 +48,10 @@ resource "aws_iam_role" "obsidian_admin_role" {
 }
 
 # Attach the IAM policy to the IAM role
-# resource "aws_iam_role_policy_attachment" "obsidian_s3_admin_attachment" {
-#   policy_arn = aws_iam_policy.obsidian_full_access.arn
-#   role       = aws_iam_role.obsidian_admin_role.name
-# }
+resource "aws_iam_role_policy_attachment" "obsidian_s3_admin_attachment" {
+  policy_arn = aws_iam_policy.obsidian_full_access.arn
+  role       = aws_iam_role.obsidian_admin_role.name
+}
 
 
 ################ Podcasts ##############
